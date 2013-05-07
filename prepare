@@ -1,0 +1,19 @@
+# @param string sql - raw sql-sentence with ? (question marks), "SELECT * FROM tab WHERE val_1 = ? AND val_2 = ? LIMIT ?"
+# @param array params - array of params to put into sql-sentence instead of ? (question marks)
+#     values in params have to have the same sequence as in the sql-statement
+#     eg. ["foo", "bar", 5]
+# @return string - prepared sql-statement, "SELECT * FROM tab WHERE val_1 = 'foo' AND val_2 = 'bar' LIMIT 5"
+def _prepare(sql, params)
+	params.each { |i|
+		case true
+		when i.instance_of?(String)
+			i = "'#{i}'"
+		when i.instance_of?(Numeric)
+			i = i.to_s
+		when i.nil?
+			i = "NULL"
+		end
+		sql = sql.sub(/\?/, i.to_s)
+	}
+	return sql
+end
