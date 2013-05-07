@@ -3,7 +3,7 @@
 #     values in params have to have the same sequence as in the sql-statement
 #     eg. ["foo", "bar", 5]
 # @return string - prepared sql-statement, "SELECT * FROM tab WHERE val_1 = 'foo' AND val_2 = 'bar' LIMIT 5"
-def _prepare(sql, params)
+def prepare(sql, params)
 	params.each { |i|
 		case true
 		when i.instance_of?(String)
