@@ -1,5 +1,5 @@
-# @param string sql - raw sql-sentence with ? (question marks), "SELECT * FROM tab WHERE val_1 = ? AND val_2 = ? LIMIT ?"
-# @param array params - array of params to put into sql-sentence instead of ? (question marks)
+# @param string sql - raw sql-statement with ? (question marks), "SELECT * FROM tab WHERE val_1 = ? AND val_2 = ? LIMIT ?"
+# @param array params - array of params to put into sql-statement instead of ? (question marks)
 #     values in params have to have the same sequence as in the sql-statement
 #     eg. ["foo", "bar", 5]
 # @return string - prepared sql-statement, "SELECT * FROM tab WHERE val_1 = 'foo' AND val_2 = 'bar' LIMIT 5"
