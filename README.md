@@ -7,7 +7,7 @@ Rails do not have such a useful method as PHP's PDO::prepare. See this [answer](
 
 So, this method allows you to prepare your SQLs like in PHP.
 
-But it is not so powerful yet. It only deals with (?) (question marks) as parameters in sql-statements. No (:name) named parameters yet.
+But it is not so powerful. It only deals with (?) (question marks) as parameters in sql-statements. No (:name) named parameters yet.
 
 It works with MySQL and PostgreSQL. Do not know about others SQL-based databases.
 
